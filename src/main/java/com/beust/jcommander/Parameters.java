@@ -60,4 +60,25 @@ public @interface Parameters {
    * @return the key used to find the command description in the resource bundle.
    */
   String commandDescriptionKey() default "";
+
+  /**
+   * <p>If specified, all options declared in the annotated class will be displayed
+   * as a separate group of options at the end of usage output.</p>
+   *
+   * <p>Option group will be displayed only once if several commands share the
+   * same option group. Use option groups to make usage output less verbose.</p>
+   */
+  String optionGroupName() default "";
+
+  /**
+   * A brief description for this option group to be displayed in the usage
+   * output. Only takes effect when {@link #optionGroupName()} was specified
+   * to a non-empty string.
+   */
+  String optionGroupDescription() default "";
+
+  /**
+   * The key used to find the option group description ({@link #optionGroupDescription()})
+   */
+  String optionGroupDescriptionKey() default "";
 }
